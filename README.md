@@ -1,3 +1,7 @@
+## Demo (sound on)
+
+https://user-images.githubusercontent.com/124255/229273984-9b5ac7f2-11f4-400d-a6dd-e38b12c769ee.mp4
+
 ## Usage
 
 To enable typewriter sounds, trigger `:TypewriterEnable`. To stop, use `:TypewriterDisable`. `:TypewriterToggle` will switch on an off and might be useful for a mapping. You can set `g:typewriter_enabled` to `v:true` to start with typewriter mode on.
