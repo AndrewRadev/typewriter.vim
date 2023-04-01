@@ -12,6 +12,12 @@ let s:carriage = s:sound_dir .. '/carriage1.wav'
 let s:ding     = s:sound_dir .. '/ding1.wav'
 
 function! typewriter#Enable() abort
+  if !has('sound')
+    echohl WarningMsg
+    echo "Typewriter.vim requires a Vim compiled with +sound"
+    return
+  endif
+
   let s:typewriter_enabled = v:true
 
   augroup Typewriter
