@@ -1,0 +1,100 @@
+*typewriter.txt*	Make cool typewriter sounds in insert mode
+
+==============================================================================
+CONTENTS                                      *typewriter*   *typewriter-contents*
+
+    Installation................................: |typewriter-installation|
+    Usage.......................................: |typewriter-usage|
+    Settings....................................: |typewriter-settings|
+    Internals...................................: |typewriter-internals|
+    Issues......................................: |typewriter-issues|
+
+
+==============================================================================
+INSTALLATION                                           *typewriter-installation*
+
+The easiest way to install the plugin is with a plugin manager:
+
+- vim-plug: https://github.com/junegunn/vim-plug
+- Vundle:   https://github.com/VundleVim/Vundle.vim
+
+If you use one, just follow the instructions in its documentation.
+
+You can install the plugin yourself using Vim's |packages| functionality by
+cloning the project (or adding it as a submodule) under
+`~/.vim/pack/<any-name>/start/`. For example:
+>
+    mkdir -p ~/.vim/pack/andrewradev/start
+    cd ~/.vim/pack/andrewradev/start
+    git clone https://github.com/andrewradev/typewriter.vim.git
+
+    # to generate documentation tags:
+    vim -u NONE -c "helptags typewriter.vim/doc" -c q
+<
+This should automatically load the plugin for you when Vim starts.
+Alternatively, you can add it to `~/.vim/pack/<any-name>/opt/` instead and
+load it in your .vimrc manually with:
+>
+    packadd typewriter
+<
+If you'd rather not use git, you can download the files from the "releases"
+tab and unzip them in the relevant directory:
+https://github.com/AndrewRadev/typewriter.vim/releases.
+
+
+==============================================================================
+USAGE                                                         *typewriter-usage*
+                        *:TypewriterEnable* *:TypewriterDisable* *:TypewriterToggle*
+
+To enable typewriter sounds, trigger |:TypewriterEnable|. To stop, use
+|:TypewriterDisable|. |:TypewriterToggle| will switch on an off and might be
+useful for a mapping. You can set |g:typewriter_enabled| to |v:true| to start
+with typewriter mode on.
+
+Going into insert mode will trigger a carriage return, exiting insert mode
+will ding and typing makes clicking sounds. That's probably not realistic, but
+it sounds kind of nice.
+
+The clicks are randomized and throttled to a maximum of 6 at a time, since
+that sounded like the right limit to me. You can adjust
+|g:typewriter_throttle| or set it to 0 to avoid throttling and get all the
+clicks at a time you can manage to produce.
+
+The plugin requires Vim9 with |+sound|. This should be included in the "huge"
+build by default, so if you don't have it, look for a more inclusive build in
+your package manager.
+
+
+==============================================================================
+SETTINGS                                                   *typewriter-settings*
+
+                                                          *g:typewriter_enabled*
+>
+    let g:typewriter_enabled = v:true
+<
+Default value: v:false
+
+Set it to `v:true` to start the typewriter sound automatically.
+
+                                                         *g:typewriter_throttle*
+>
+    let g:typewriter_throttle = 3
+<
+Default value: 6
+
+How many click sounds to allow playing at a time. If you type faster than the
+clicks can finish, every new click over this limit will not trigger.
+
+The default was simply adjusted by ear on my computer, so your mileage may
+vary -- tweak this value until it sounds okay. Set it to zero to avoid any
+throttling.
+
+
+==============================================================================
+ISSUES                                                       *typewriter-issues*
+
+Any issues and suggestions are very welcome on the github bugtracker:
+https://github.com/AndrewRadev/typewriter.vim/issues
+
+
+vim:tw=78:sw=4:ft=help:norl:
