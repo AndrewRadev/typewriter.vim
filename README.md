@@ -18,9 +18,11 @@ Neovim doesn't have `+sound` at the time of writing, but I might accept a PR tha
 
 ## References
 
-The [vim-keysound](https://github.com/skywind3000/vim-keysound) plugin by @skywind3000 has a greater variety of sounds, but it requires python and sdl2 to run. It could be a good option for older Vims or Neovim.
+The [vim-keysound](https://github.com/skywind3000/vim-keysound) plugin by @skywind3000 has a greater variety of sounds, but it requires python and SDL2 to run. It could be a good option for older Vims or Neovim.
 
-There's an existing colorcheme called `typewriter-vim`: https://github.com/logico/typewriter-vim. I'd be open to renaming the project to avoid confusion, but I'd appreciate a good naming suggestion.
+Another program that listens to key presses in X11, not necessarily tied to Vim (also requires SDL2, zig): <https://github.com/pro-anon/typewriter>.
+
+There's an existing colorcheme called `typewriter-vim`: <https://github.com/logico/typewriter-vim>. I'd be open to renaming the project to avoid confusion, but I'd appreciate a good naming suggestion.
 
 The sounds are from freesound.org:
 
