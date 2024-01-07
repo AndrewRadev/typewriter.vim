@@ -15,6 +15,7 @@ function! typewriter#Enable() abort
   if !has('sound')
     echohl WarningMsg
     echo "Typewriter.vim requires a Vim compiled with +sound"
+    echohl NONE
     return
   endif
 
