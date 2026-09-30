@@ -32,4 +32,4 @@ The sounds are from freesound.org:
 
 ## Contributing
 
-Pull requests are welcome. Be sure to abide by the [CODE_OF_CONDUCT.md](https://github.com/AndrewRadev/typewriter.vim/blob/master/CODE_OF_CONDUCT.md).
+Pull requests are welcome, as long as they **did not involve LLM usage**. Be sure to abide by the [CODE_OF_CONDUCT.md](https://github.com/AndrewRadev/typewriter.vim/blob/master/CODE_OF_CONDUCT.md).
